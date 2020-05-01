@@ -1,0 +1,9 @@
+def viralAdvertising(n):
+    shares=5
+    likes=0
+    
+    for day in range(1,n+1):
+        like=math.floor(shares/2)
+        likes+=like
+        shares=like*3
+    return likes
