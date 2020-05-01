@@ -1,0 +1,9 @@
+def angryProfessor(k, a):
+    count=0
+    for items in a :
+        if items<=0:
+            count+=1
+    if count<k:
+        return 'YES'    
+    else:
+        return 'NO'   
