@@ -1,0 +1,22 @@
+def kaprekarNumbers(p, q):
+    List=[]
+    for i in range(p,q+1):
+        j=i**2
+        l=len(str(j))
+        d=len(str(i))
+        if l>1:
+            r_st=str(j)[-d:]
+            l_st=str(j)[0:-d]
+            num=int(r_st)+int(l_st)
+            if num==i:
+                List.append(str(i))
+            else:
+                continue
+        elif i==1:
+            List.append(str(1))   
+    if len(List)==0:
+        print("INVALID RANGE")
+    else:
+        s= " "
+        s=s.join(List)
+        print(s)
