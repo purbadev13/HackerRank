@@ -1,0 +1,31 @@
+seq=[19,10,12,10,22,24,25]     # can be any list
+k=4                            # can be changed
+freq_arr=[0]*k                 # creating a frequency list to count the modulo
+for num in seq:
+    freq_arr[num%k]+=1
+count =freq_arr[0]*(freq_arr[0]-1)//2
+ 
+Index=1
+while Index<=k//2 and Index!=k-Index:
+    count+=freq_arr[Index]*freq_arr[k-Index]
+    Index+=1
+if k%2==0:
+    count+=freq_arr[k//2]*(freq_arr[k//2]-1)//2  
+print(count) 
+------------------------------------------------------------------------------------------------------
+# The other way
+------------------------------------------------------------------------------------------------------
+               freq_arr=[0]*k
+               count=0
+               for i in seq :
+                   rem=i%k
+                     if rem!=0:
+                      count+=freq_arr[k-rem]
+                     else:
+                      count+=freq_arr[0]
+                   freq_arr[rem]+=1
+                print(count)
+       
+  
+ 
+
