@@ -1,0 +1,29 @@
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the pangrams function below.
+def pangrams(s):
+    s=s.replace(" ","")
+    dic={}
+    for ch in s:
+        if ch not in dic:
+            dic[ch]=0
+    print(len(dic.keys()))
+    if len(dic.keys())==26:
+        return "pangram"
+    else:
+        return "not pangram"
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = pangrams(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
