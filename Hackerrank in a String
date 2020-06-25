@@ -1,0 +1,12 @@
+def hackerrankInString(s):
+    st="hackerrank"
+    if len(s)<len(st):
+        return "NO"
+    j=0
+    for i in range(0,len(s)):
+        if j<len(st) and s[i]==st[j]:
+            j+=1
+    if j==len(st):
+        return "YES"
+    else:
+        return "NO"       
